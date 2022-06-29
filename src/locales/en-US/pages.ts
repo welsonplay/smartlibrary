@@ -65,4 +65,7 @@ export default {
   'pages.searchTable.tenThousand': '0000',
   'pages.searchTable.batchDeletion': 'bacth deletion',
   'pages.searchTable.batchApproval': 'batch approval',
+
+  'pages.search.title': 'Azure Cognitive Search',
+  'pages.search.form.search': 'Search',
 };

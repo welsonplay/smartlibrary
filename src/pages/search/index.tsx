@@ -1,22 +1,57 @@
-import { PageHeaderWrapper } from '@ant-design/pro-components';
-import { Typography } from 'antd';
+import { AudioOutlined } from '@ant-design/icons';
+import { Col, Input, Row, Typography } from 'antd';
 import React from 'react';
-import { useIntl } from 'umi';
+import { history, useIntl } from 'umi';
+import styles from './index.less';
 
-const Search: React.FC = () => {
+const suffix = (
+  <AudioOutlined
+    style={{
+      fontSize: 16,
+      color: '#1890ff',
+    }}
+  />
+);
+
+const { Search } = Input;
+
+const PageSearch: React.FC = () => {
   const intl = useIntl();
   return (
-    <PageHeaderWrapper
-      content={intl.formatMessage({
-        id: 'pages.admin.subPage.title',
-        defaultMessage: 'This page can only be viewed by admin',
-      })}
-    >
-      <Typography.Title editable level={1} style={{ margin: 0 }}>
-        h1. Ant Design
-      </Typography.Title>
-    </PageHeaderWrapper>
+    <div className={styles.content}>
+      <>
+        <Row>
+          <Col span={12} offset={6}>
+            <Typography.Title level={1} style={{ margin: 0, textAlign: 'center' }}>
+              {intl.formatMessage({
+                id: 'pages.search.title',
+              })}
+            </Typography.Title>
+          </Col>
+        </Row>
+        <br />
+        <Row>
+          <Col span={12} offset={6}>
+            <Search
+              enterButton={intl.formatMessage({
+                id: 'pages.search.form.search',
+              })}
+              size="large"
+              suffix={suffix}
+              onSearch={(value) => {
+                history.push({
+                  pathname: '/search/result',
+                  query: {
+                    q: value,
+                  },
+                });
+              }}
+            />
+          </Col>
+        </Row>
+      </>
+    </div>
   );
 };
 
-export default Search;
+export default PageSearch;

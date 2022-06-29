@@ -17,7 +17,15 @@
     path: '/search',
     name: 'search',
     icon: 'smile',
-    component: './search',
+    routes: [
+      {
+        path: '/search/result',
+        component: './search/search-result/',
+      },
+      {
+        component: './search',
+      },
+    ],
   },
   {
     path: '/welcome',

@@ -8,10 +8,11 @@ import settings from './pt-BR/settings';
 
 export default {
   'navBar.lang': 'Idiomas',
-  'layout.user.link.help': 'ajuda',
-  'layout.user.link.privacy': 'política de privacidade',
-  'layout.user.link.terms': 'termos de serviços',
+  'layout.user.link.help': 'Ajuda',
+  'layout.user.link.privacy': 'Política de privacidade',
+  'layout.user.link.terms': 'Termos de serviços',
   'app.preview.down.block': 'Download this page to your local project',
+  'app.copyright.produced': 'Criado Por Welson Play',
   ...globalHeader,
   ...menu,
   ...settingDrawer,
